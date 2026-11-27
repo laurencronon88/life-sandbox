@@ -1,15 +1,20 @@
-name: Bed Edit UX browser QA
+name: Bed Edit browser QA
 on:
   push:
-    branches:
-      - bed-edit/ux
-      - main
+    branches: [main]
+    paths:
+      - 'the-bed-edit/**'
+      - '.github/workflows/bed-edit-ux-qa.yml'
+  pull_request:
+    paths:
+      - 'the-bed-edit/**'
+      - '.github/workflows/bed-edit-ux-qa.yml'
   workflow_dispatch:
+permissions:
+  contents: read
 jobs:
   browser-qa:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,12 +28,14 @@ jobs:
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/bed-edit-server.log 2>&1 &
           sleep 2
-      - name: Test desktop and mobile experience
+      - name: Page flow, prices and layout at phone, tablet and desktop
         run: node the-bed-edit/tests/browser-qa.cjs
-      - name: Upload QA screenshots
+      - name: All 18 photos, every look, season and angle
+        run: node the-bed-edit/tests/pillow-qa.cjs
+      - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: bed-edit-responsive-qa
+          name: bed-edit-qa-screenshots
           path: qa-*.png
           if-no-files-found: ignore
