@@ -1,0 +1,33 @@
+name: Bed Edit UX browser QA
+on:
+  push:
+    branches:
+      - bed-edit/ux
+  workflow_dispatch:
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright and browser
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Serve static site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/bed-edit-server.log 2>&1 &
+          sleep 2
+      - name: Test desktop and mobile experience
+        run: node the-bed-edit/tests/browser-qa.cjs
+      - name: Upload QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bed-edit-responsive-qa
+          path: qa-*.png
+          if-no-files-found: ignore
