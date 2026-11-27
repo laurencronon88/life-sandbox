@@ -29,6 +29,27 @@ for(const viewport of [{width:390,height:844},{width:768,height:1024},{width:144
  await page.locator('#comparison .compare-card').nth(2).locator('button').click();
  assert.match(await page.locator('#favoriteStatement').innerText(),/Airy/);
  assert.equal(await page.locator('#productRows tr').count(),8);
+
+ // Verify all approved, committed photos actually load from the seasonal asset paths.
+ const conceptIds=['crisp-classic','soft-textured','airy-luminous'];
+ for(let c=0;c<3;c++){
+   await page.locator('#overview .overview-card').nth(c).locator('button').click();
+   for(const season of ['summer','winter']){
+     await page.locator('[data-season="'+season+'"]').click();
+     for(const angle of ['hero','side','detail']){
+       await page.locator('[data-angle="'+angle+'"]').click();
+       const expected=conceptIds[c]+'-'+season+'-'+angle+'.webp';
+       await page.waitForFunction((name)=>{
+         const img=document.getElementById('mainImage');
+         return img && img.complete && img.naturalWidth>0 && img.currentSrc.includes(name);
+       },expected,{timeout:10000});
+       const actual=await page.locator('#mainImage').getAttribute('src');
+       assert.ok(actual.includes(expected),'Expected real seasonal image '+expected+', got '+actual);
+     }
+   }
+ }
+ console.log('PASS all 18 approved seasonal images at '+viewport.width+'px');
+
  await page.screenshot({path:'qa-'+viewport.width+'.png',fullPage:true});
  console.log('PASS '+viewport.width+'px, sticky top='+sticky.top);
  await page.close();
