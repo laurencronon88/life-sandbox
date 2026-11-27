@@ -21,7 +21,7 @@ const assert = require('node:assert/strict');
           return {name:concept.name,total,count:concept.products.length}
         },c);
         assert.equal((await page.locator('#selectedName').innerText()).trim(),info.name);
-        assert.equal(await page.locator('#productRows tr').count(),info.count,'Shopping row count '+info.name);
+        assert.equal(await page.locator('#productRows li').count(),info.count,'Shopping row count '+info.name);
         const displayed=(await page.locator('#selectedPrice').innerText()).trim();
         assert.ok(displayed.includes(info.total.toLocaleString('en-US',{maximumFractionDigits:0})), 'Price mismatch '+displayed+' '+info.total);
         for (const season of ['summer','winter']) {
