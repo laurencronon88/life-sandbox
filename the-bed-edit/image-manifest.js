@@ -37,3 +37,7 @@ window.BED_IMAGE_MANIFEST={
     }
   }
 };
+
+// Lauren approved the 18 photographic styling studies for integration.
+// This flag enables actual season/angle images; they remain illustrative, not verified retail photography.
+window.BED_IMAGES_APPROVED = true;
