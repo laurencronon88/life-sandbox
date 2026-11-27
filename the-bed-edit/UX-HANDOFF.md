@@ -46,3 +46,16 @@ Static source inspection, source-data verification and JavaScript syntax compila
 **Browser and visual QA remains outstanding.** This session did not have a navigable testing browser and no hosted branch preview was deployed. At ~390px, ~768px and ~1440px test actual sticky behavior, screen-reader labels, 44px targets, overflow, images, expected link destinations, clipboard permissions, keyboard navigation and all 3×3×3 concept/season/angle combinations. Inspect console/network errors. After photography approval, verify each of the 18 images loads without fallback and corresponds to the correct concept/season/angle. Re-check checkout prices and active promotions. Record screenshots in PR.
 
 Do not merge or deploy before this browser QA and photography integration have passed.
+
+
+## Critical creative review gate — concept differentiation
+
+Photography review identified a substantive collision between **Crisp & Classic** and **Airy & Luminous**. Both have an ivory/white cotton percale foundation and no linen, so merely changing exposure or camera position is **not** sufficient. Preserve all product selections, Queen sizes, and complete pricing. Strengthen the visual distinction through staging and photographic art direction:
+
+- **01 Crisp & Classic / tailored hospitality:** exacting tuck, deliberate symmetrical envelope and crisp flat folds, tailored percale seams/stitching, centered orderly composition, restrained sophisticated hotel feeling. No linen.
+- **02 Soft & Textured / warm residential:** ivory linen duvet over cooling percale, discernible matte woven grain and nuanced tactile folds, residential coziness without heavy or claw-snagging chunky knits. Disclose linen's potential cat-claw vulnerability.
+- **03 Airy & Luminous / relaxed contemporary:** notably more negative space, soft expansive light, less tightly tucked and more effortless cotton-percale drape, lighter apparent visual weight, contemporary airy silhouette. No linen.
+
+**Acceptance criterion:** Present the three approved *summer hero* images side by side at mobile-card size with titles hidden. A reviewer must be able to identify three different directions from bed construction, textile behavior and art direction, not simply lighting/color grading. Then compare the *winter hero* images side by side: winter adds the included quilt and duvet, but **retains the same distinct direction**. The hero/side/detail angles must remain genuinely different camera perspectives of *each same bed*. Do not alter exact products to manufacture distinction. Lauren's personal weighted blanket must never span Matt's side.
+
+Photographer should report the side-by-side differentiation result and any needed iteration in its branch handoff/PR, with candidate hero previews; UX integrator does not approve or merge unreviewed images.
