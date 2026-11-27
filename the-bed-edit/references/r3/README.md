@@ -1,33 +1,33 @@
-# The Bed Edit — R3 source photography
+# The Bed Edit — R3 reference imagery
 
-**Status: upload package prepared; the nine image binaries are NOT committed here yet.**
+## Upload status
 
-## Required folder layout
+**Three R2 winter preview renderings have been uploaded and Git-tree verified on this branch** as high-quality JPEG copies (the source generation files were PNG). These are *provisional styling studies*, not final reference-locked bedroom edits or exact manufacturer photography.
 
-```
-references/r3/original-bedroom/
-  IMG_5441.jpeg
-  IMG_5440.jpeg
-  IMG_5439.jpeg
-  IMG_5436.jpeg
-  IMG_5438.jpeg
-  IMG_5437.jpeg
-references/r3/r2-studies/
-  r2-crisp-classic-winter-preview.jpg
-  r2-soft-textured-winter-preview.jpg
-  r2-airy-luminous-winter-preview.jpg
-```
+### Available on this branch
 
-The user-provided six original bedroom images are the architectural source of truth; the three R2 generated studies are provisional, *not* reference-locked edits and *not* manufacturer-verified.
+- [01 — Crisp & Classic winter](./r2-studies/01-Crisp-and-Classic-Winter.jpg)
+- [02 — Soft & Textured winter](./r2-studies/02-Soft-and-Textured-Winter.jpg)
+- [03 — Airy & Luminous winter](./r2-studies/03-Airy-and-Luminous-Winter.jpg)
 
-The complete ZIP package is generated in the ChatGPT conversation as `The-Bed-Edit-R3-Reference-Photos.zip` and must be extracted/uploaded to the repository before Claude Code can read these files from GitHub.
+### Not yet uploaded to GitHub
 
-## R3 product decisions
+The six original bedroom photographs have **not** been uploaded. Their original filenames in the conversation are:
+- IMG_5441.jpeg
+- IMG_5440.jpeg
+- IMG_5439.jpeg
+- IMG_5436.jpeg
+- IMG_5438.jpeg
+- IMG_5437.jpeg
 
-- Queen bed; cooling percale foundation.
-- Concept 02 Boll & Branch Vintage Sand cotton duvet set with 2 included shams; no linen.
-- Two separate natural ivory silk pillowcases, not gold foreground pillows.
-- Matouk Milano white diamond-stitched quilt.
+These originals must be the architectural source of truth when the R3 images are edited. The ChatGPT conversation contains a separate ZIP package; the six files cannot be considered GitHub assets until verified in the repository.
+
+### Creative rules
+
+- Queen bed, existing walnut platform and cognac leather headboard, concrete loft architecture and furniture unchanged.
+- Concept 02: Boll & Branch Vintage Sand cotton duvet set with two shams; no linen.
+- Two separate natural ivory silk pillows, not gold foreground pillows.
+- Matouk Milano white double-stitched diamond quilt.
 - Lauren-only Bearaby Tree Napper Softwood, 15 lb; no LUXOME.
 
-Do not claim the photos exist in GitHub until the above nine images appear and download successfully. Do not merge this reference branch as a final photography release.
+**This branch does not modify live pages or main.**
