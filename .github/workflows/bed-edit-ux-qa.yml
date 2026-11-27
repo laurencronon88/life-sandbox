@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - bed-edit/ux
+      - main
   workflow_dispatch:
 jobs:
   browser-qa:
