@@ -9,6 +9,7 @@ function el(tag,className,text){const e=document.createElement(tag);if(className
 function loadImage(img,concept,season,angle,notice){
  const i=concepts.indexOf(concept),j=angles.indexOf(angle),fallback=legacy[i][j];const actualSeason=season==='winter'?'winter':'summer';
  const expected=manifest[concept.id][actualSeason][angle];let usedFallback=false;
+ if(window.BED_IMAGES_APPROVED!==true){img.onerror=null;img.src=fallback;if(notice)notice.textContent=(season==='transitional'?'Spring / Fall styling guide · ':'')+'Illustrative concept study · seasonal photography pending approval';img.alt=concept.name+' bedding direction, '+angle+' view. Illustrative concept study, not exact product photography.';return;}
  img.onerror=()=>{if(usedFallback)return;usedFallback=true;img.onerror=null;img.src=fallback;if(notice)notice.textContent=(season==='transitional'?'Spring / Fall styling guide · ':'')+'Illustrative concept study · seasonal photography pending approval';};
  img.onload=()=>{if(!usedFallback&&notice)notice.textContent=(season==='transitional'?'Spring / Fall uses summer imagery with transitional layering guidance · ':'')+'Seasonal styling image · illustrative, not verified product photography';};
  img.alt=concept.name+' bedding direction, '+angle+' view, '+(season==='transitional'?'spring/fall styling reference':season+' styling')+'. Concept illustration, not verified retail product photo.';
