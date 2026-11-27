@@ -2,38 +2,38 @@
 window.BED_IMAGE_MANIFEST={
   "crisp-classic": {
     "summer": {
-      "hero": "assets/crisp-classic-summer-hero.webp",
-      "side": "assets/crisp-classic-summer-side.webp",
-      "detail": "assets/crisp-classic-summer-detail.webp"
+      "hero": "assets/crisp-classic-summer-hero.webp?v=pillow-fix-20261127",
+      "side": "assets/crisp-classic-summer-side.webp?v=pillow-fix-20261127",
+      "detail": "assets/crisp-classic-summer-detail.webp?v=pillow-fix-20261127"
     },
     "winter": {
-      "hero": "assets/crisp-classic-winter-hero.webp",
-      "side": "assets/crisp-classic-winter-side.webp",
-      "detail": "assets/crisp-classic-winter-detail.webp"
+      "hero": "assets/crisp-classic-winter-hero.webp?v=pillow-fix-20261127",
+      "side": "assets/crisp-classic-winter-side.webp?v=pillow-fix-20261127",
+      "detail": "assets/crisp-classic-winter-detail.webp?v=pillow-fix-20261127"
     }
   },
   "soft-textured": {
     "summer": {
-      "hero": "assets/soft-textured-summer-hero.webp",
-      "side": "assets/soft-textured-summer-side.webp",
-      "detail": "assets/soft-textured-summer-detail.webp"
+      "hero": "assets/soft-textured-summer-hero.webp?v=pillow-fix-20261127",
+      "side": "assets/soft-textured-summer-side.webp?v=pillow-fix-20261127",
+      "detail": "assets/soft-textured-summer-detail.webp?v=pillow-fix-20261127"
     },
     "winter": {
-      "hero": "assets/soft-textured-winter-hero.webp",
-      "side": "assets/soft-textured-winter-side.webp",
-      "detail": "assets/soft-textured-winter-detail.webp"
+      "hero": "assets/soft-textured-winter-hero.webp?v=pillow-fix-20261127",
+      "side": "assets/soft-textured-winter-side.webp?v=pillow-fix-20261127",
+      "detail": "assets/soft-textured-winter-detail.webp?v=pillow-fix-20261127"
     }
   },
   "airy-luminous": {
     "summer": {
-      "hero": "assets/airy-luminous-summer-hero.webp",
-      "side": "assets/airy-luminous-summer-side.webp",
-      "detail": "assets/airy-luminous-summer-detail.webp"
+      "hero": "assets/airy-luminous-summer-hero.webp?v=pillow-fix-20261127",
+      "side": "assets/airy-luminous-summer-side.webp?v=pillow-fix-20261127",
+      "detail": "assets/airy-luminous-summer-detail.webp?v=pillow-fix-20261127"
     },
     "winter": {
-      "hero": "assets/airy-luminous-winter-hero.webp",
-      "side": "assets/airy-luminous-winter-side.webp",
-      "detail": "assets/airy-luminous-winter-detail.webp"
+      "hero": "assets/airy-luminous-winter-hero.webp?v=pillow-fix-20261127",
+      "side": "assets/airy-luminous-winter-side.webp?v=pillow-fix-20261127",
+      "detail": "assets/airy-luminous-winter-detail.webp?v=pillow-fix-20261127"
     }
   }
 };
