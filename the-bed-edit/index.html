@@ -250,6 +250,10 @@ body[data-mood="airy"]{
 .closer-notes h3{font-size:clamp(37px,4vw,63px);line-height:.95;margin:25px 0}
 @media(max-width:900px){.inspo-board{grid-template-columns:1fr 1fr}.inspo-board figure{min-height:380px}.inspo-material{grid-column:1/-1;border-top:2px solid var(--mood-ink)}.inspo-material h3{margin:28px 0}.closer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.proposal-section{margin:45px 0 65px}.proposal-index{font-size:10px}.proposal-split{display:block}.proposal-split h2{font-size:clamp(65px,16vw,96px)}.proposal-lead{font-size:15px}.brief-grid{display:block}.brief-grid article{min-height:225px;border-right:0;border-bottom:2px solid var(--mood-ink)}.brief-grid article:last-child{border:0}.brief-grid h3{font-size:37px;margin:24px 0 13px}.inspo-board{display:block}.inspo-board figure{min-height:290px;border-right:0;border-bottom:2px solid var(--mood-ink)}.inspo-material{min-height:245px}.inspo-material h3{font-size:37px}.closer-grid{display:block}.closer-feature{min-height:480px;padding:30px 23px}.closer-feature h2{font-size:clamp(66px,15vw,95px)}.closer-notes{border-left:0;border-top:2px solid var(--mood-ink)}}
+</style><style>
+/* Intro reveals the proposal cover from its beginning, including on Safari history restore. */
+html.intro-active,html.intro-active body{overflow:hidden!important;overscroll-behavior:none}
+html.intro-active{scroll-behavior:auto!important}
 </style></head><body><div id="bedIntro" class="modularIntro" role="presentation" aria-hidden="true">
   <div class="mi-top"><span>THE BED EDIT</span><span>HOME STUDY 001 / L + M</span><button id="skipIntro" type="button" aria-label="Skip opening animation">SKIP INTRO</button></div>
   <div class="mi-grid">
@@ -309,19 +313,42 @@ document.querySelectorAll('[data-look],[data-select]').forEach(b=>b.addEventList
  const splash=document.getElementById('bedIntro');
  if(!splash)return;
  const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const root=document.documentElement;
+ // Prevent mobile Safari and browser history restoration from revealing the middle of the proposal.
+ if('scrollRestoration' in history)history.scrollRestoration='manual';
+ function atTop(){
+   window.scrollTo({top:0,left:0,behavior:'instant'});
+   root.scrollTop=0;
+   document.body.scrollTop=0;
+ }
  if(reduced){splash.remove();return;}
+ root.classList.add('intro-active');
+ atTop();
  let finished=false;
  let timeout=window.setTimeout(close,4750);
+ function unlock(){
+   root.classList.remove('intro-active');
+   atTop();
+   requestAnimationFrame(function(){atTop();});
+ }
  function close(){
-  if(finished)return;
-  finished=true;
-  window.clearTimeout(timeout);
-  splash.classList.add('is-leaving');
-  splash.addEventListener('transitionend',function(){splash.remove()},{once:true});
-  window.setTimeout(function(){if(splash.isConnected)splash.remove()},1100);
+   if(finished)return;
+   finished=true;
+   clearTimeout(timeout);
+   const button=document.getElementById('skipIntro');
+   if(button)button.blur();
+   atTop();
+   splash.classList.add('is-leaving');
+   const finish=function(){
+     if(splash.isConnected)splash.remove();
+     unlock();
+   };
+   splash.addEventListener('transitionend',finish,{once:true});
+   window.setTimeout(finish,1100);
  }
  document.getElementById('skipIntro').addEventListener('click',close);
  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+ window.addEventListener('pageshow',function(){if(!finished)atTop();});
 })();
 </script><script>(function(){
 if(typeof images!=='undefined'){
