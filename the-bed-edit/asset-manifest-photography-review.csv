@@ -1,0 +1,19 @@
+concept,season,camera_angle,filename,status,dimensions,source,validation
+crisp-classic,summer,hero,crisp-classic-summer-hero.webp,REVIEW_REQUIRED,829x840,generated_diptych_1,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+crisp-classic,winter,hero,crisp-classic-winter-hero.webp,REVIEW_REQUIRED,829x840,generated_diptych_1,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+crisp-classic,summer,side,crisp-classic-summer-side.webp,REVIEW_REQUIRED,829x840,generated_diptych_2,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+crisp-classic,winter,side,crisp-classic-winter-side.webp,REVIEW_REQUIRED,829x840,generated_diptych_2,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+crisp-classic,summer,detail,crisp-classic-summer-detail.webp,REVIEW_REQUIRED,829x840,generated_diptych_3,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+crisp-classic,winter,detail,crisp-classic-winter-detail.webp,REVIEW_REQUIRED,829x840,generated_diptych_3,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+soft-textured,summer,hero,soft-textured-summer-hero.webp,REVIEW_REQUIRED,829x840,generated_diptych_4,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+soft-textured,winter,hero,soft-textured-winter-hero.webp,REVIEW_REQUIRED,829x840,generated_diptych_4,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+soft-textured,summer,side,soft-textured-summer-side.webp,REVIEW_REQUIRED,829x840,generated_diptych_5,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+soft-textured,winter,side,soft-textured-winter-side.webp,REVIEW_REQUIRED,829x840,generated_diptych_5,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+soft-textured,summer,detail,soft-textured-summer-detail.webp,REVIEW_REQUIRED,829x840,generated_diptych_6,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+soft-textured,winter,detail,soft-textured-winter-detail.webp,REVIEW_REQUIRED,829x840,generated_diptych_6,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+airy-luminous,summer,hero,airy-luminous-summer-hero.webp,REVIEW_REQUIRED,829x840,generated_diptych_7,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+airy-luminous,winter,hero,airy-luminous-winter-hero.webp,REVIEW_REQUIRED,829x840,generated_diptych_7,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+airy-luminous,summer,side,airy-luminous-summer-side.webp,REVIEW_REQUIRED,829x840,generated_diptych_8,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+airy-luminous,winter,side,airy-luminous-winter-side.webp,REVIEW_REQUIRED,829x840,generated_diptych_8,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+airy-luminous,summer,detail,airy-luminous-summer-detail.webp,REVIEW_REQUIRED,829x840,generated_diptych_9,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
+airy-luminous,winter,detail,airy-luminous-winter-detail.webp,REVIEW_REQUIRED,829x840,generated_diptych_9,Illustrative AI styling; exact Matouk quilting and product appearance NOT verified
