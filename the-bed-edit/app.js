@@ -38,6 +38,7 @@ function render(){
  document.querySelectorAll('[data-angle]').forEach(b=>b.setAttribute('aria-pressed',String(state.angle===b.dataset.angle)));
  document.querySelectorAll('[data-concept]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.concept)===state.concept)));
  document.querySelectorAll('[data-card]').forEach(b=>b.classList.toggle('active',Number(b.dataset.card)===state.concept));
+ $('photoConceptLabel').textContent=c.name;$('photoDifferenceLabel').textContent=c.eyebrow;
  $('selectedNumber').textContent='0'+(state.concept+1)+' / THE SELECTED LOOK';$('selectedName').textContent=c.name;$('selectedDesc').textContent=c.description;
  $('swatches').replaceChildren(...c.palette.map(color=>{const s=el('span');s.style.backgroundColor=color;s.title='Material palette '+color;return s}));
  $('seasonLabel').textContent=season.label;$('seasonHeading').textContent=season.heading;$('seasonDesc').textContent=season.desc;
