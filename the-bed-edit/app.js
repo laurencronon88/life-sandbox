@@ -38,7 +38,6 @@ function render(){
  document.querySelectorAll('[data-angle]').forEach(b=>b.setAttribute('aria-pressed',String(state.angle===b.dataset.angle)));
  document.querySelectorAll('[data-concept]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.concept)===state.concept)));
  document.querySelectorAll('[data-card]').forEach(b=>b.classList.toggle('active',Number(b.dataset.card)===state.concept));
- $('photoConceptLabel').textContent=c.name;$('photoDifferenceLabel').textContent=c.eyebrow;
  $('selectedNumber').textContent='0'+(state.concept+1)+' / THE SELECTED LOOK';$('selectedName').textContent=c.name;$('selectedDesc').textContent=c.description;
  $('swatches').replaceChildren(...c.palette.map(color=>{const s=el('span');s.style.backgroundColor=color;s.title='Material palette '+color;return s}));
  $('seasonLabel').textContent=season.label;$('seasonHeading').textContent=season.heading;$('seasonDesc').textContent=season.desc;
@@ -46,15 +45,15 @@ function render(){
  $('selectedPrice').textContent=price(t);loadImage($('mainImage'),c,state.season,state.angle,$('photoNotice'));
  $('shoppingName').textContent=c.name;$('shoppingTotal').textContent=price(t);$('tableTotal').textContent=price(t);
  const tbody=$('productRows');tbody.replaceChildren();
- c.products.forEach((p,i)=>{const tr=el('tr');const th=el('th');th.scope='row';th.append(el('span','',p.name+' · Qty '+p.qty));th.append(el('p','',p.description));th.append(el('small','',p.note));
- const td=el('td','',price(p.pricing));const linkTd=el('td');const a=el('a','','View item ↗');a.href=p.url;a.target='_blank';a.rel='noopener noreferrer';linkTd.append(a);tr.append(th,td,linkTd);tbody.append(tr)});
+ c.products.forEach((p,i)=>{const tr=el('tr');const th=el('th');th.scope='row';th.append(el('span','',p.name+' · Qty '+p.qty));th.append(el('p','',p.description));th.append(el('small','',p.variantToSelect));th.append(el('small','',p.note));
+ const td=el('td','',price(p.pricing));const linkTd=el('td');const a=el('a','','Shop exact product ↗');a.href=p.url;a.target='_blank';a.rel='noopener noreferrer';linkTd.append(a,el('small','',p.linkVerification));tr.append(th,td,linkTd);tbody.append(tr)});
  document.querySelectorAll('[data-compare]').forEach(card=>{const i=Number(card.dataset.compare);card.classList.toggle('favorite',state.favorite===i);card.querySelector('button').textContent=state.favorite===i?'✓ Our favorite':'Choose as our favorite'});
  $('favoriteStatement').textContent=state.favorite===null?'Choose your favorite direction.':'Our favorite: '+concepts[state.favorite].name+'.';
  $('copyButton').textContent=state.favorite===null?'Copy selected look shopping list':'Copy favorite shopping list';
 }
 async function copyList(){
  const c=concepts[state.favorite===null?state.concept:state.favorite];
- const message='THE BED EDIT — '+c.name+'\nComplete all-season Queen collection · planning estimate '+price(total(c))+' (USD, before tax/shipping)\n\n'+c.products.map((p,i)=>(i+1)+'. '+p.name+' — quantity '+p.qty+' — '+price(p.pricing)+'\n'+p.url+'\n'+p.note).join('\n\n')+'\n\nVerify Queen sizes, stock and current prices before buying.';
+ const message='THE BED EDIT — '+c.name+'\nComplete all-season Queen collection · planning estimate '+price(total(c))+' (USD, before tax/shipping)\n\n'+c.products.map((p,i)=>(i+1)+'. '+p.name+' — quantity '+p.qty+' — '+price(p.pricing)+'\n'+p.url+'\nSelection: '+p.variantToSelect+'\n'+p.note).join('\n\n')+'\n\nVerify Queen sizes, stock and current prices before buying.';
  try{await navigator.clipboard.writeText(message);$('copyStatus').textContent='Shopping list copied.'}catch(err){const area=el('textarea');area.value=message;area.style.position='fixed';area.style.left='-9999px';document.body.append(area);area.select();const success=document.execCommand('copy');area.remove();$('copyStatus').textContent=success?'Shopping list copied.':'Unable to copy automatically; use your browser copy controls.'}
 }
 buttons();overview();comparison();$('copyButton').addEventListener('click',copyList);render();
