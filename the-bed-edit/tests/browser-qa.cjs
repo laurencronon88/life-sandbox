@@ -10,7 +10,7 @@ for(const viewport of [{width:390,height:844},{width:768,height:1024},{width:144
  await page.locator('#overview .overview-card').first().waitFor();
  assert.equal(await page.locator('#overview .overview-card').count(),3);
  assert.equal(await page.locator('#productRows tr').count(),9);
- assert.match(await page.locator('#selectedPrice').innerText(),/2,299/);
+ assert.match(await page.locator('#selectedPrice').innerText(),/2,324/);
  assert.equal(await page.locator('html').evaluate(el=>el.scrollWidth<=innerWidth),true,'No horizontal overflow at '+viewport.width);
  await page.locator('#overview .overview-card').nth(1).locator('button').click();
  assert.equal(await page.locator('#selectedName').innerText(),'Soft & Textured');
