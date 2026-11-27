@@ -44,7 +44,7 @@ function render(){
  $('selectedPrice').textContent=price(t);loadImage($('mainImage'),c,state.season,state.angle,$('photoNotice'));
  $('shoppingName').textContent=c.name;$('shoppingTotal').textContent=price(t);$('tableTotal').textContent=price(t);
  const tbody=$('productRows');tbody.replaceChildren();
- c.products.forEach((p,i)=>{const tr=el('tr');const th=el('th');th.scope='row';th.append(el('span','',p.name));th.append(el('p','',p.description));th.append(el('small','',p.note));
+ c.products.forEach((p,i)=>{const tr=el('tr');const th=el('th');th.scope='row';th.append(el('span','',p.name+' · Qty '+p.qty));th.append(el('p','',p.description));th.append(el('small','',p.note));
  const td=el('td','',price(p.pricing));const linkTd=el('td');const a=el('a','','View item ↗');a.href=p.url;a.target='_blank';a.rel='noopener noreferrer';linkTd.append(a);tr.append(th,td,linkTd);tbody.append(tr)});
  document.querySelectorAll('[data-compare]').forEach(card=>{const i=Number(card.dataset.compare);card.classList.toggle('favorite',state.favorite===i);card.querySelector('button').textContent=state.favorite===i?'✓ Our favorite':'Choose as our favorite'});
  $('favoriteStatement').textContent=state.favorite===null?'Choose your favorite direction.':'Our favorite: '+concepts[state.favorite].name+'.';
