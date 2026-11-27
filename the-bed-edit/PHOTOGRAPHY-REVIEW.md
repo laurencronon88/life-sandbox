@@ -1,23 +1,32 @@
 # The Bed Edit — Photography review handoff (November 27, 2026)
 
-**Status: review only. No image files are committed yet.** The 18 generated WebP candidates, nine original diptychs and contact sheet exist in the ChatGPT conversation package `the-bed-edit-photo-review.zip`, but the GitHub connector cannot transfer binary files directly from the local workspace.
+## Upload status — CONFIRMED
 
-## QA blockers
-- Generated individual panels are approximately 829×840px, not requested landscape hero/side/detail proportions.
-- Concept 01 and Concept 03 look too similar.
-- Exact Matouk Milano quilt construction and selected product appearance were **not validated** against manufacturer references. AI renderings are illustrative, not verified retail photography.
-- Room geometry and props drift across separately generated angles; some invented flowers and vases appear.
-- Weighted blanket use should remain Lauren-only, never over Matt.
-- Manual image approval and final cross-device browser QA pending.
+**All 18 individual WebP review files are committed to this branch** at `the-bed-edit/assets/{concept}-{season}-{angle}.webp`. The `assets/review-contact-sheet.jpg` and `assets/The-Bed-Edit-Photography-Review-v2.zip` are committed as well.
 
-## Art direction
-- **01 Crisp & Classic:** smooth white cotton percale, tailored hotel presentation, no linen.
-- **02 Soft & Textured:** ivory woven linen duvet, crisp percale foundation.
-- **03 Airy & Luminous:** relaxed percale, light and open, no linen.
+- Binary upload commit: https://github.com/laurencronon88/life-sandbox/commit/1a09ec3bf56b352c15b62e3ac686ab9673ef2fbf
+- Draft photography PR: https://github.com/laurencronon88/life-sandbox/pull/2
+- Git tree verified: 18 WebPs + ZIP + contact sheet.
+- These are **REVIEW CANDIDATES ONLY**, not approved retail-accurate renderings. **Do not merge, deploy, or characterize as final.**
 
-For each concept, winter retains the exact summer foundation and adds the Matouk Milano quilt, with no unnecessary throws.
+## Visual QA remaining
 
-## Asset transfer
-Review package: `the-bed-edit-photo-review.zip` (attached in the user's ChatGPT conversation; not available as a public URL or repository file).
+1. Several winter side/detail images retain horizontal rib/channel quilting, not the Matouk Milano double-stitched diamond pattern. Replace before approval.
+2. Differentiate Crisp & Classic (tailored white percale) and Airy & Luminous (lighter relaxed percale) more clearly; no linen for either.
+3. Maintain identical room geometry, camera positions, furniture, and lighting between each summer/winter pair and logically related angle views.
+4. Remove any invented decor or throws outside the actual budgeted shopping list. No cats or people.
+5. Validate visual resemblance of selected silk cases, linen and percale textures and Matouk quilt against trusted manufacturer references; label remaining illustrations accurately.
+6. Keep Lauren's personal weighted blanket separate from Matt's sleeping zone.
+7. Verify adequate responsive crops and sharpness. The original panel-derived assets are approximately 829×840px, not wide desktop hero captures.
 
-After asset transfer and approval, put the 18 WebPs in `the-bed-edit/assets/` following `asset-manifest.csv`. Then update `image-manifest.js` and validate all 18 states. Do not merge or publish this branch before photo approval.
+## Integration instructions
+
+After art-direction corrections and approval, update all 18 files in `the-bed-edit/assets/` and keep the 18-slot UX `image-manifest.js` in sync. QA all concepts, seasons, and angles on mobile/tablet/desktop. Review pricing for any newly necessary item before merging. PR #1 contains the UX integration and QA gates.
+
+## Art-direction intent
+
+- **01 Crisp & Classic:** crisp white cotton percale, tailored hospitality aesthetic, subtle silk sheen; no linen.
+- **02 Soft & Textured:** ivory woven linen duvet over crisp percale; warm, residential, cat-conscious styling.
+- **03 Airy & Luminous:** lighter, softly relaxed percale, clean visual breathing room; no linen.
+
+Winter retains each summer setup and adds the **same budgeted** Matouk Milano quilt in diamond quilting, without replacing the bedding foundation.
